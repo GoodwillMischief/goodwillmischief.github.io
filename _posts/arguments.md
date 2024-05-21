@@ -5,8 +5,8 @@ categories: [BYUCTF2024, Web]
 tags: [web, tar]     # TAG names should always be lowercase
 author: happi
 description: On mai 2024, we paticipated to BYUCTF where we had the opportunity to work on this web challenge arround tar insecure use
-media_subpath: /assets/img/posts/BYUCTF24/argument
-
+media_subpath: /assets/img/posts/byuctf24/argument
+---
 
 
 ![[enonce.png]]
