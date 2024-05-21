@@ -1,4 +1,16 @@
-# Chirpy Starter
+## How to use
+
+1. Clone the repository
+2. Create a new post upon `/_posts/<CTF_NAME>/<YYYY-MM-DD-filename>.md`
+3. Write your article. You can posts your images in `/img/<CTF>` folder and include it in your posts using `![legend](/assets/img/<CTF>/<filename>)`
+4. Commit changes and push
+
+Your article should be published.
+
+_Note: don't forget to add a new entry in `/_data/authors.yml`_
+
+
+## Chirpy
 
 [![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
 [![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
