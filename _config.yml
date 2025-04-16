@@ -28,11 +28,14 @@ url: "https://goodwillmischief.com"
 github:
   username: goodwillmischief # change to your github username
 
+twitter:
+  username: goodwill_mischief # change to your twitter username
+
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: Goodwill Mischief
-  email: team@goodwillmischief.com # change to your email address
+  email: teams@goodwillmischief.com # change to your email address
   links:
     - https://github.com/goodwillmischief # change to your github homepage
     # Uncomment below to add more social links
