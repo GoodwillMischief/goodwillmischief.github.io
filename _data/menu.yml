@@ -1,0 +1,22 @@
+
+entries:
+  - title: Latest Posts
+    entries:
+    - title: Write-ups
+      post_list:
+        category: writeup
+        limit: 5
+        show_more: true
+        show_more_text: See more write-ups...
+        show_more_url: writeups-archive.html
+  - title: Other
+    post_list:
+      limit: 2
+      category: other
+      show_more: true
+      show_more_text: See archive...
+      show_more_url: archive.html
+
+
+  - title: RSS
+    url: feed.xml
